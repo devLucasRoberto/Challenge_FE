@@ -1,9 +1,13 @@
 import { Link as LinkUI, Stack } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export function NavLink() {
+  const location = useLocation()
+  const { pathname } = location
+
+  console.log(pathname)
   return (
-    <Stack spacing={2} fontSize="1rem">
+    <Stack spacing={2} fontSize="1rem" mt="1rem">
       <Link
         to="/"
         style={{
@@ -11,7 +15,7 @@ export function NavLink() {
         }}
       >
         <LinkUI
-          color="text.primary"
+          color={pathname === '/' ? 'secondary.main' : 'text.primary'}
           sx={{
             cursor: 'pointer',
             textDecoration: 'none',
@@ -28,7 +32,7 @@ export function NavLink() {
         }}
       >
         <LinkUI
-          color="text.primary"
+          color={pathname === '/tasks' ? 'secondary.main' : 'text.primary'}
           underline="none"
           sx={{ cursor: 'pointer', ':hover': { color: 'secondary.main' } }}
         >
