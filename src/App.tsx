@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   CssBaseline,
   ThemeProvider,
@@ -15,13 +16,13 @@ function App() {
       <SidebarDrawerProvider>
         <Header />
 
-        <Container maxWidth={false} sx={{ display: 'flex' }}>
+        <Box display="flex">
           <Sidebar />
 
           <Typography variant="h1" component="div">
             Index
           </Typography>
-        </Container>
+        </Box>
 
         <CssBaseline />
       </SidebarDrawerProvider>
