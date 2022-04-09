@@ -1,4 +1,5 @@
-import { Box, Typography, useMediaQuery } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
+import { NavLink } from './NavLink'
 import { ResponsiveSidebar } from './ResponsiveSidebar'
 
 export function Sidebar() {
@@ -12,7 +13,7 @@ export function Sidebar() {
         bgcolor="primary.light"
         textAlign="center"
       >
-        <Typography component="a">Sidebar</Typography>
+        <NavLink />
       </Box>
     )
   }

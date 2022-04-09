@@ -1,7 +1,8 @@
-import { Box, Drawer, Typography } from '@mui/material'
+import { Box, Drawer } from '@mui/material'
 import { useContext } from 'react'
 import { SidebarDrawerContext } from '../../contexts/SidebarDrawerContext'
 import CloseIcon from '@mui/icons-material/Close'
+import { NavLink } from './NavLink'
 
 export function ResponsiveSidebar() {
   const { isDrawerOpen, setIsDrawerOpen } = useContext(SidebarDrawerContext)
@@ -33,9 +34,7 @@ export function ResponsiveSidebar() {
         role="presentation"
         sx={{ bgcolor: 'primary.light' }}
       >
-        <Typography variant="h6" component="div">
-          Sidebar
-        </Typography>
+        <NavLink />
       </Box>
     </Drawer>
   )
