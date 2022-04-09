@@ -1,7 +1,16 @@
-import React from 'react'
+import { CssBaseline, ThemeProvider, Typography } from '@mui/material'
+import { theme } from './styles/theme'
 
 function App() {
-  return <h1>challenge</h1>
+  return (
+    <ThemeProvider theme={theme}>
+      <Typography variant="h1" component="div">
+        challenge
+      </Typography>
+
+      <CssBaseline />
+    </ThemeProvider>
+  )
 }
 
 export default App
