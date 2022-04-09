@@ -1,7 +1,11 @@
 import { Container, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useContext } from 'react'
+import { SidebarDrawerContext } from '../../contexts/SidebarDrawerContext'
 
 export function Header() {
+  const { setIsDrawerOpen } = useContext(SidebarDrawerContext)
+
   return (
     <Container
       maxWidth={false}
@@ -12,14 +16,17 @@ export function Header() {
         bgcolor: 'primary.light'
       }}
     >
-      <MenuIcon />
+      <MenuIcon
+        onClick={() => setIsDrawerOpen(true)}
+        sx={{ cursor: 'pointer' }}
+      />
       <Typography
         sx={{
           width: '100%',
           textAlign: 'center',
           color: 'secondary.main',
           fontWeight: 'bold',
-          fontSize: '35px'
+          fontSize: '2.18rem'
         }}
       >
         New App
