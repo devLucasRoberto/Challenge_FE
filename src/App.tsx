@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  CssBaseline,
-  ThemeProvider,
-  Typography
-} from '@mui/material'
+import { Box, CssBaseline, ThemeProvider, Typography } from '@mui/material'
 import { Header } from './components/Header'
 import { Sidebar } from './components/Sidebar'
 import { SidebarDrawerProvider } from './contexts/SidebarDrawerContext'

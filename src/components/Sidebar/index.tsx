@@ -2,7 +2,7 @@ import { Box, Typography, useMediaQuery } from '@mui/material'
 import { ResponsiveSidebar } from './ResponsiveSidebar'
 
 export function Sidebar() {
-  const sidebarMobile = '(min-width:900px)'
+  const sidebarMobile = useMediaQuery('(min-width:900px)')
 
   if (sidebarMobile) {
     return (
