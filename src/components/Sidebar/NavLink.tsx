@@ -1,21 +1,39 @@
-import { Link, Stack } from '@mui/material'
+import { Link as LinkUI, Stack } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export function NavLink() {
   return (
     <Stack spacing={2} fontSize="1rem">
       <Link
-        color="text.primary"
-        underline="none"
-        sx={{ cursor: 'pointer', ':hover': { color: 'secondary.main' } }}
+        to="/"
+        style={{
+          textDecoration: 'none'
+        }}
       >
-        Home
+        <LinkUI
+          color="text.primary"
+          sx={{
+            cursor: 'pointer',
+            textDecoration: 'none',
+            ':hover': { color: 'secondary.main' }
+          }}
+        >
+          Home
+        </LinkUI>
       </Link>
       <Link
-        color="text.primary"
-        underline="none"
-        sx={{ cursor: 'pointer', ':hover': { color: 'secondary.main' } }}
+        to="/tasks"
+        style={{
+          textDecoration: 'none'
+        }}
       >
-        Tasks
+        <LinkUI
+          color="text.primary"
+          underline="none"
+          sx={{ cursor: 'pointer', ':hover': { color: 'secondary.main' } }}
+        >
+          Tasks
+        </LinkUI>
       </Link>
     </Stack>
   )
