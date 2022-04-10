@@ -14,7 +14,7 @@ function App() {
         <SidebarDrawerProvider>
           <Header />
 
-          <Box display="flex">
+          <Box display="flex" minHeight="calc(100vh - 60px)">
             <Sidebar />
 
             <Routes>
