@@ -37,21 +37,19 @@ export function Tasks() {
     setRefresh(refresh + 1)
   }
 
-  console.log(loading)
-
   return (
-    <Container sx={{ mb: '40px' }}>
-      <Typography fontSize="30px" mt="40px" variant="h1" fontWeight="500">
+    <Container sx={{ mb: '2.5rem' }}>
+      <Typography fontSize="1.87rem" mt="2.5rem" variant="h1" fontWeight="500">
         Task List
       </Typography>
       <TableContainer
         component={Paper}
         sx={{
           bgcolor: 'primary.light',
-          height: '700px',
+          height: '43.75rem',
           width: '100%',
-          mt: '40px',
-          mb: '20px'
+          mt: '2.5rem',
+          mb: '1.25rem'
         }}
       >
         <Table arial-label="tasks table" stickyHeader>
