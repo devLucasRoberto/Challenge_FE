@@ -15,6 +15,15 @@ export const theme = createTheme({
     text: {
       primary: '#EEEEF2',
       secondary: '#797D9A'
+    },
+    error: {
+      main: '#c62828'
+    },
+    success: {
+      main: '#2e7d32'
+    },
+    info: {
+      main: '#0288d1'
     }
   },
   typography: {
