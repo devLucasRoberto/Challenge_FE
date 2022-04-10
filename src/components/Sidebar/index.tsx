@@ -7,12 +7,7 @@ export function Sidebar() {
 
   if (sidebarMobile) {
     return (
-      <Box
-        height="calc(100vh - 3.75rem)"
-        width="15.625rem"
-        bgcolor="primary.light"
-        textAlign="center"
-      >
+      <Box width="15.625rem" bgcolor="primary.light" textAlign="center">
         <NavLink />
       </Box>
     )
