@@ -1,7 +1,8 @@
-import { Container, Typography, useMediaQuery } from '@mui/material'
+import { Box, Container, Typography, useMediaQuery } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useContext } from 'react'
 import { SidebarDrawerContext } from '../../contexts/SidebarDrawerContext'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   const { setIsDrawerOpen } = useContext(SidebarDrawerContext)
@@ -24,17 +25,19 @@ export function Header() {
         />
       )}
 
-      <Typography
-        sx={{
-          width: '100%',
-          textAlign: 'center',
-          color: 'secondary.main',
-          fontWeight: 'bold',
-          fontSize: '2.18rem'
-        }}
-      >
-        New App
-      </Typography>
+      <Box display="flex" justifyContent="center" width="100%">
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Typography
+            sx={{
+              color: 'secondary.main',
+              fontWeight: 'bold',
+              fontSize: '2.18rem'
+            }}
+          >
+            New App
+          </Typography>
+        </Link>
+      </Box>
     </Container>
   )
 }
