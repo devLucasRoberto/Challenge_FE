@@ -1,17 +1,5 @@
-import {
-  Paper,
-  Table,
-  TableHead,
-  TableContainer,
-  TableRow,
-  TableCell,
-  TableBody,
-  Typography,
-  Container,
-  Chip,
-  Button,
-  CircularProgress
-} from '@mui/material'
+import { Typography, Container, Button, CircularProgress } from '@mui/material'
+import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
@@ -29,6 +17,7 @@ export function Tasks() {
 
   useEffect(() => {
     api.get('tasks').then(response => setTask(response.data))
+
     setLoading(false)
   }, [refresh])
 
@@ -37,51 +26,63 @@ export function Tasks() {
     setRefresh(refresh + 1)
   }
 
+  const data = task.map(task => {
+    return {
+      id: task.id,
+      task: task.text,
+      status: task.completed ? 'Completed' : 'Not completed'
+    }
+  })
+
+  const columns = [
+    {
+      title: 'Id',
+      field: 'id',
+      headerName: 'Id'
+    },
+    {
+      title: 'Task',
+      field: 'task',
+      headerName: 'Task',
+      width: 400
+    },
+    {
+      title: 'Status',
+      field: 'status',
+      headerName: 'Status',
+      width: 130
+    }
+  ]
+
   return (
     <Container sx={{ mb: '2.5rem' }}>
-      <Typography fontSize="1.87rem" mt="2.5rem" variant="h1" fontWeight="500">
+      <Typography
+        fontSize="1.87rem"
+        mt="2.5rem"
+        variant="h1"
+        fontWeight="500"
+        color="text.secondary"
+      >
         Task List
       </Typography>
-      <TableContainer
-        component={Paper}
+      <DataGrid
+        rows={data}
+        columns={columns}
+        components={{ Toolbar: GridToolbar }}
+        pageSize={20}
         sx={{
-          bgcolor: 'primary.light',
+          bgcolor: '#383A59',
+          color: 'white',
           height: '43.75rem',
           width: '100%',
           mt: '2.5rem',
-          mb: '1.25rem'
+          mb: '1.25rem',
+          borderColor: 'white',
+          '& .MuiDataGrid-cell:hover': {
+            color: 'secondary.main'
+          }
         }}
-      >
-        <Table arial-label="tasks table" stickyHeader>
-          <TableHead>
-            <TableRow>
-              <TableCell>Id</TableCell>
-              <TableCell>Task</TableCell>
-              <TableCell>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {task.map(task => {
-              return (
-                <TableRow
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell>{task.id}</TableCell>
-                  <TableCell>{task.text}</TableCell>
-
-                  <TableCell>
-                    {task.completed ? (
-                      <Chip label="Completed" color="success" />
-                    ) : (
-                      <Chip label="Not Completed" color="error" />
-                    )}
-                  </TableCell>
-                </TableRow>
-              )
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      />
       {loading ? (
         <CircularProgress size={35} sx={{ color: 'white' }} />
       ) : (

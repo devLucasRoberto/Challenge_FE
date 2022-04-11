@@ -15,7 +15,7 @@ export function NavLink() {
         }}
       >
         <Typography
-          color={pathname === '/' ? 'secondary.main' : 'text.primary'}
+          color={pathname === '/' ? 'secondary.main' : 'text.secondary'}
           sx={{
             ':hover': { color: 'secondary.main' }
           }}
@@ -30,7 +30,7 @@ export function NavLink() {
         }}
       >
         <Typography
-          color={pathname === '/tasks' ? 'secondary.main' : 'text.primary'}
+          color={pathname === '/tasks' ? 'secondary.main' : 'text.secondary'}
           sx={{
             ':hover': { color: 'secondary.main' }
           }}
