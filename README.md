@@ -18,7 +18,7 @@ https://github.com/MarceloFonseca/tasks-api
 
 4. If you want to use default port or other you need to go the folder src/services/api.ts in Challenge_fe and change baseURL
 
-## Available Scripts
+## Frontend
 
 In the project directory, you can run:
 
