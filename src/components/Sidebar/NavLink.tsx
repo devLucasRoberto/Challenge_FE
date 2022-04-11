@@ -1,4 +1,4 @@
-import { Link as LinkUI, Stack } from '@mui/material'
+import { Link as LinkUI, Stack, Typography } from '@mui/material'
 import { Link, useLocation } from 'react-router-dom'
 
 export function NavLink() {
@@ -14,16 +14,14 @@ export function NavLink() {
           textDecoration: 'none'
         }}
       >
-        <LinkUI
+        <Typography
           color={pathname === '/' ? 'secondary.main' : 'text.primary'}
           sx={{
-            cursor: 'pointer',
-            textDecoration: 'none',
             ':hover': { color: 'secondary.main' }
           }}
         >
           Home
-        </LinkUI>
+        </Typography>
       </Link>
       <Link
         to="/tasks"
@@ -31,13 +29,14 @@ export function NavLink() {
           textDecoration: 'none'
         }}
       >
-        <LinkUI
+        <Typography
           color={pathname === '/tasks' ? 'secondary.main' : 'text.primary'}
-          underline="none"
-          sx={{ cursor: 'pointer', ':hover': { color: 'secondary.main' } }}
+          sx={{
+            ':hover': { color: 'secondary.main' }
+          }}
         >
           Tasks
-        </LinkUI>
+        </Typography>
       </Link>
     </Stack>
   )
