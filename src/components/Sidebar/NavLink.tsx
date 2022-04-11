@@ -1,4 +1,4 @@
-import { Link as LinkUI, Stack, Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import { Link, useLocation } from 'react-router-dom'
 
 export function NavLink() {
