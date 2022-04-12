@@ -1,3 +1,5 @@
+<p align="center"><img src="https://i.imgur.com/DNyuRUV.png" align="center" alt="Yo"></p>
+
 # Challenge_FE
 
 Website created using ReactJS, Material Ui, React-router-dom, axios and Jest for unit tests.
