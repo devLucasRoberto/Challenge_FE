@@ -22,10 +22,12 @@ export function ResponsiveSidebar() {
         sx={{ bgcolor: 'primary.light' }}
       >
         <CloseIcon
+          color="secondary"
           onClick={() => setIsDrawerOpen(false)}
           sx={{ cursor: 'pointer' }}
         />
       </Box>
+
       <Box
         p={2}
         width="15.625rem"

@@ -5,7 +5,6 @@ export function NavLink() {
   const location = useLocation()
   const { pathname } = location
 
-  console.log(pathname)
   return (
     <Stack spacing={2} fontSize="1rem" mt="1rem">
       <Link

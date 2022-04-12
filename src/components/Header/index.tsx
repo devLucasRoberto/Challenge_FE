@@ -20,6 +20,7 @@ export function Header() {
     >
       {!sidebarMobile && (
         <MenuIcon
+          color="secondary"
           onClick={() => setIsDrawerOpen(true)}
           sx={{ cursor: 'pointer' }}
         />

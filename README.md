@@ -8,15 +8,16 @@ https://github.com/MarceloFonseca/tasks-api
 
 ### Usage instructions
 
-1. Go to app dir and run npm install 
+1. Go to app dir and run npm install
 
-2. Launch API using: “PORT=3008 NEW_TASK_PERIOD=60000 npm start”, where: 
-- **PORT**: App port, default 8080 
-- **NEW_TASK_PERIOD**: Period on which a new task is added to the list (in milliseconds), default: 60000 
+2. Launch API using: “PORT=3008 NEW_TASK_PERIOD=60000 npm start”, where:
+
+- **PORT**: App port, default 8080
+- **NEW_TASK_PERIOD**: Period on which a new task is added to the list (in milliseconds), default: 60000
 
 3. You can access the API using: http://localhost:3008/api/tasks/
 
-4. If you want to use default port or other you need to go the folder src/services/api.ts in Challenge_fe and change baseURL
+4. I'm using port 3008 but if you want to use default port or other you need to go the folder src/services/api.ts in Challenge_FE and change baseURL
 
 ## Frontend
 
@@ -46,5 +47,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-

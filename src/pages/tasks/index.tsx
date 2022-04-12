@@ -7,7 +7,6 @@ import {
   AlertTitle
 } from '@mui/material'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid'
-
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 
@@ -96,7 +95,8 @@ export function Tasks() {
         rows={data}
         columns={columns}
         components={{ Toolbar: GridToolbar }}
-        pageSize={20}
+        pageSize={25}
+        rowsPerPageOptions={[25]}
         checkboxSelection
         sx={{
           bgcolor: '#383A59',

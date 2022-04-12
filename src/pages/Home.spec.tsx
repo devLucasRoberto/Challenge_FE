@@ -6,5 +6,8 @@ describe('Index page', () => {
     render(<Index />)
 
     expect(screen.getByText('Home'))
+    expect(screen.getByText('Backend:'))
+    expect(screen.getByText('github.com/MarceloFonseca/tasks-api'))
+    expect(screen.getByText('Usage instructions'))
   })
 })
