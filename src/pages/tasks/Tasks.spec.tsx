@@ -19,6 +19,5 @@ describe('Tasks page', () => {
 
     expect(screen.getByText('Id'))
     expect(screen.getByText('Task'))
-    expect(screen.getByText('Status'))
   })
 })

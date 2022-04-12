@@ -1,4 +1,11 @@
-import { Typography, Container, Button, CircularProgress } from '@mui/material'
+import {
+  Typography,
+  Container,
+  Button,
+  CircularProgress,
+  Alert,
+  AlertTitle
+} from '@mui/material'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 import { useEffect, useState } from 'react'
@@ -14,15 +21,18 @@ export function Tasks() {
   const [task, setTask] = useState<TaskData[]>([])
   const [loading, setLoading] = useState<Boolean>(false)
   const [refresh, setRefresh] = useState(0)
+  const [error, setError] = useState<String>()
 
   useEffect(() => {
-    api.get('tasks').then(response => setTask(response.data))
-
+    setLoading(true)
+    api
+      .get('tasks')
+      .then(response => setTask(response.data))
+      .catch(error => setError(error.message))
     setLoading(false)
   }, [refresh])
 
   function handleRefresh() {
-    setLoading(true)
     setRefresh(refresh + 1)
   }
 
@@ -44,12 +54,14 @@ export function Tasks() {
       title: 'Task',
       field: 'task',
       headerName: 'Task',
+      editable: true,
       width: 400
     },
     {
       title: 'Status',
       field: 'status',
       headerName: 'Status',
+      editable: true,
       width: 130
     }
   ]
@@ -65,11 +77,27 @@ export function Tasks() {
       >
         Task List
       </Typography>
+
+      {error && (
+        <Alert
+          severity="error"
+          sx={{
+            bgcolor: 'error.main',
+            color: 'text.secondary',
+            mt: '2.5rem'
+          }}
+        >
+          <AlertTitle>Error</AlertTitle>
+          <strong>Tasks API</strong> - {error}
+        </Alert>
+      )}
+
       <DataGrid
         rows={data}
         columns={columns}
         components={{ Toolbar: GridToolbar }}
         pageSize={20}
+        checkboxSelection
         sx={{
           bgcolor: '#383A59',
           color: 'white',
@@ -83,6 +111,7 @@ export function Tasks() {
           }
         }}
       />
+
       {loading ? (
         <CircularProgress size={35} sx={{ color: 'white' }} />
       ) : (
